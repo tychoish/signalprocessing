@@ -1,26 +1,9 @@
-package changepoints
+package signalprocessing
 
 import "sort"
 
 // An FloatHeap is a min-sorted-list of floats.
 type sortedList []float64
-
-// Data interface for sort.
-//// Get the length of the Heap
-//func (s sortedList) Len() int {
-//	return len(s)
-//}
-//
-//// True id i is less than j.
-//func (s sortedList) Less(i, j int) bool {
-//	return s[i] < s[j]
-//}
-//
-//// Swap i and j.
-//func (s sortedList) Swap(i, j int) {
-//	s[i], s[j] = s[j], s[i]
-//}
-//
 
 // Clear the list.
 func (s *sortedList) Clear() {
@@ -39,7 +22,7 @@ func (s *sortedList) Insert(floats ...float64) {
 			copy((*s)[index+1:], (*s)[index:])
 			(*s)[index] = f
 		}
-		length += 1
+		length++
 	}
 	// note: the lines above are about 3 times faster than inserting and then sorting
 	//*s = append(*s, floats...)
@@ -65,7 +48,7 @@ func (s *sortedList) Remove(f float64) {
 // Calculate the median, assuming the list is sorted.
 func (s *sortedList) Median() float64 {
 	length := len(*s)
-	center := int(length / 2)
+	center := length / 2
 	if length%2 != 0 {
 		return (*s)[center]
 	}

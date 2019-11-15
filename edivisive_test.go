@@ -1,4 +1,4 @@
-package changepoints
+package singalprocessing
 
 import (
 	"testing"

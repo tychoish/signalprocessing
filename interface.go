@@ -1,4 +1,4 @@
-package changepoints
+package signalprocessing
 
 // ChangeDetector types calculate change points.
 type ChangeDetector interface {

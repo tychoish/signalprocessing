@@ -1,4 +1,4 @@
-package changepoints
+package signalprocessing
 
 import (
 	"testing"
