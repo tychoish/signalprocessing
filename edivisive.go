@@ -1,4 +1,4 @@
-package singalprocessing
+package signalprocessing
 
 import (
 	"math"
